@@ -1,0 +1,2 @@
+recursive-include ai_engineer *.py *.json *.js *.css *.html *.svg *.txt
+include pyproject.toml README.md setup.py

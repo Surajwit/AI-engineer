@@ -1,0 +1,15 @@
+{
+  "doctype":"DocType",
+  "name":"AI Engineer Session",
+  "module":"AI Engineer",
+  "autoname":"hash",
+  "fields":[
+    {"fieldname":"title","label":"Title","fieldtype":"Data"},
+    {"fieldname":"status","label":"Status","fieldtype":"Select","options":"Open\nCompleted\nFailed","default":"Open"},
+    {"fieldname":"user","label":"User","fieldtype":"Link","options":"User","default":"__user"},
+    {"fieldname":"messages","label":"Messages","fieldtype":"Long Text"},
+    {"fieldname":"working_directory","label":"Working Directory","fieldtype":"Data"},
+    {"fieldname":"last_action","label":"Last Action","fieldtype":"Data"}
+  ],
+  "permissions":[{"role":"System Manager","read":1,"write":1,"create":1,"delete":1}]
+}

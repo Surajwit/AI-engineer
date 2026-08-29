@@ -1,0 +1,10 @@
+{
+  "doctype": "Page",
+  "name": "ai-engineer",
+  "title": "AI Engineer",
+  "module": "AI Engineer",
+  "standard": "Yes",
+  "roles": [
+    {"role": "System Manager"}
+  ]
+}

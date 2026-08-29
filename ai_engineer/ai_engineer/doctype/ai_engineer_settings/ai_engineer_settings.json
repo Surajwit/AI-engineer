@@ -1,0 +1,149 @@
+{
+  "doctype": "DocType",
+  "name": "AI Engineer Settings",
+  "module": "AI Engineer",
+  "issingle": 1,
+  "istable": 0,
+  "editable_grid": 0,
+  "fields": [
+    {
+      "fieldname": "ai_provider",
+      "label": "AI Provider",
+      "fieldtype": "Select",
+      "options": "Anthropic\nGoogle\nNVIDIA\nOpenAI",
+      "default": "NVIDIA",
+      "reqd": 1,
+      "description": "Select the AI provider used by the AI Engineer agent. Changing this setting does not change the agent tools or ERPNext codebase logic."
+    },
+    {
+      "fieldname": "model",
+      "label": "Model",
+      "fieldtype": "Data",
+      "default": "moonshotai/kimi-k2.6",
+      "reqd": 1,
+      "description": "Provider model ID. Examples: claude-sonnet-5, gemini-3.7-flash, moonshotai/kimi-k2.6, gpt-5.6-luna."
+    },
+    {
+      "fieldname": "api_keys_section",
+      "label": "Provider API Keys",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "anthropic_api_key",
+      "label": "Anthropic API Key",
+      "fieldtype": "Password",
+      "description": "API key for the Anthropic Claude API."
+    },
+    {
+      "fieldname": "google_api_key",
+      "label": "Google AI API Key",
+      "fieldtype": "Password",
+      "description": "API key created in Google AI Studio for the Gemini API."
+    },
+    {
+      "fieldname": "nvidia_api_key",
+      "label": "NVIDIA API Key",
+      "fieldtype": "Password",
+      "description": "Existing NVIDIA Developer API key for the hosted NIM endpoint."
+    },
+    {
+      "fieldname": "openai_api_key",
+      "label": "OpenAI API Key",
+      "fieldtype": "Password",
+      "description": "API key for the OpenAI API."
+    },
+    {
+      "fieldname": "endpoints_section",
+      "label": "Provider Endpoints",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "anthropic_base_url",
+      "label": "Anthropic Base URL",
+      "fieldtype": "Data",
+      "default": "https://api.anthropic.com",
+      "description": "Normally leave this at the official Anthropic API endpoint."
+    },
+    {
+      "fieldname": "google_base_url",
+      "label": "Google Gemini Base URL",
+      "fieldtype": "Data",
+      "default": "https://generativelanguage.googleapis.com/v1beta",
+      "description": "Normally leave this at the Google Gemini API endpoint."
+    },
+    {
+      "fieldname": "nvidia_base_url",
+      "label": "NVIDIA NIM Base URL",
+      "fieldtype": "Data",
+      "default": "https://integrate.api.nvidia.com/v1",
+      "description": "Base URL for NVIDIA NIM. Existing Base URL values are retained for backward compatibility."
+    },
+    {
+      "fieldname": "openai_base_url",
+      "label": "OpenAI Base URL",
+      "fieldtype": "Data",
+      "default": "https://api.openai.com/v1",
+      "description": "Normally leave this at the official OpenAI API endpoint."
+    },
+    {
+      "fieldname": "base_url",
+      "label": "Legacy Base URL",
+      "fieldtype": "Data",
+      "default": "https://integrate.api.nvidia.com/v1",
+      "hidden": 1,
+      "description": "Compatibility field retained from the original NVIDIA-only AI Engineer settings."
+    },
+    {
+      "fieldname": "legacy_base_url",
+      "label": "Legacy NIM Base URL",
+      "fieldtype": "Data",
+      "default": "https://integrate.api.nvidia.com/v1",
+      "hidden": 1,
+      "description": "Compatibility field retained from earlier AI Engineer versions."
+    },
+    {
+      "fieldname": "runtime_section",
+      "label": "Agent Runtime",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "temperature",
+      "label": "Temperature",
+      "fieldtype": "Float",
+      "default": "0.1",
+      "description": "Sampling temperature. Some models, including current Claude reasoning models, ignore or reject custom sampling parameters; the provider adapter handles this safely."
+    },
+    {
+      "fieldname": "max_tokens",
+      "label": "Max Output Tokens",
+      "fieldtype": "Int",
+      "default": "16384"
+    },
+    {
+      "fieldname": "allow_code_execution",
+      "label": "Allow Code Execution",
+      "fieldtype": "Check",
+      "default": 0,
+      "description": "Required for agent validation commands. Keep disabled until you trust the generated code and environment."
+    },
+    {
+      "fieldname": "allowed_commands",
+      "label": "Allowed Commands",
+      "fieldtype": "Small Text",
+      "default": "python -m compileall\npython -m pytest\nruff check\nbench --version"
+    },
+    {
+      "fieldname": "workspace_root",
+      "label": "Workspace Root",
+      "fieldtype": "Data",
+      "description": "Optional path under the bench directory for generated projects. Leave blank to use sites/<site>/private/ai_engineer."
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1
+    }
+  ]
+}

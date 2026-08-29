@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai_engineer"
+version = "0.1.1"
+description = "AI engineering agent for Frappe and ERPNext"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31.0"]
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0-dev,<17.0.0"
+erpnext = ">=16.0.0-dev,<17.0.0"

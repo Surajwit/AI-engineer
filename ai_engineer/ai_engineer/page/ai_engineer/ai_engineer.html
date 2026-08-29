@@ -1,0 +1,16 @@
+<div class="ai-engineer-shell">
+  <div class="ai-engineer-header">
+    <div><h2>AI Engineer</h2><p class="text-muted">Build and modify Frappe apps with an AI engineering agent.</p><div id="ai-provider-status" class="text-muted"></div></div>
+    <button class="btn btn-default" id="ai-new-session">New Session</button>
+  </div>
+  <div class="ai-engineer-grid">
+    <aside class="ai-engineer-sidebar">
+      <div class="ai-card"><b>Capabilities</b><ul><li>Inspect ERPNext source</li><li>Search installed apps</li><li>Generate new Frappe apps</li><li>Validate generated code</li><li>Run allowlisted tests</li></ul></div>
+      <div class="ai-card"><b>Safety</b><p class="text-muted">Generated code is restricted to the bench apps/workspace. Installation, migrations, destructive actions and core edits require explicit approval.</p></div>
+    </aside>
+    <main class="ai-engineer-main">
+      <div id="ai-chat" class="ai-chat"></div>
+      <div class="ai-composer"><textarea id="ai-message" rows="4" placeholder="Tell the AI Engineer what you want to build..."></textarea><button class="btn btn-primary" id="ai-send">Send</button></div>
+    </main>
+  </div>
+</div>
