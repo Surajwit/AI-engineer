@@ -3,12 +3,12 @@ from ai_engineer.services.agent import run_agent, list_apps, search_code, read_f
 
 
 def _manager():
-    if frappe.session.user == "Guest" or not frappe.has_role("System Manager"):
+    if frappe.session.user == "Guest" or not "System Manager" in frappe.get_roles():
         frappe.throw("AI Engineer requires the System Manager role")
 
 
 def has_app_permission():
-    return frappe.session.user != "Guest" and frappe.has_role("System Manager")
+    return frappe.session.user != "Guest" and "System Manager" in frappe.get_roles()
 
 
 def _get_owned_session(name):

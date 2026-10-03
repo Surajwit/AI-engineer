@@ -7,6 +7,13 @@
   "editable_grid": 0,
   "fields": [
     {
+      "fieldname": "site_name",
+      "label": "Site Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "description": "The Frappe site that AI Engineer is authorized to operate on. AI Engineer will not automatically detect or substitute another site."
+    },
+    {
       "fieldname": "ai_provider",
       "label": "AI Provider",
       "fieldtype": "Select",
@@ -130,7 +137,8 @@
       "fieldname": "allowed_commands",
       "label": "Allowed Commands",
       "fieldtype": "Small Text",
-      "default": "python -m compileall\npython -m pytest\nruff check\nbench --version"
+      "default": "python -m compileall\npython -m pytest\nruff check\nbench --version\nbench --site {site} install-app\nbench --site {site} migrate\nbench --site {site} clear-cache\nbench --site {site} clear-website-cache\nbench --site {site} list-apps\nbench --site {site} version",
+      "description": "Commands AI Engineer may execute. The agent also applies a hard safety policy that only permits validation and narrowly scoped Frappe bench lifecycle commands."
     },
     {
       "fieldname": "workspace_root",

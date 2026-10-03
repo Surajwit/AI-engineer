@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local databases
+*.db
+
+# Backup files
+*.bak
+*.backup*
+*.before_*
+api_old_backup/
+
+# Logs
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor / OS files
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,15 +1,52 @@
 {
-  "doctype":"DocType",
-  "name":"AI Engineer Action",
-  "module":"AI Engineer",
-  "autoname":"hash",
-  "fields":[
-    {"fieldname":"session","label":"Session","fieldtype":"Link","options":"AI Engineer Session","reqd":1},
-    {"fieldname":"action","label":"Action","fieldtype":"Data","reqd":1},
-    {"fieldname":"target","label":"Target","fieldtype":"Data"},
-    {"fieldname":"input_json","label":"Input","fieldtype":"Long Text"},
-    {"fieldname":"output","label":"Output","fieldtype":"Long Text"},
-    {"fieldname":"status","label":"Status","fieldtype":"Select","options":"Planned\nExecuted\nFailed\nRejected","default":"Planned"}
+  "doctype": "DocType",
+  "name": "AI Engineer Action",
+  "module": "AI Engineer",
+  "autoname": "hash",
+  "fields": [
+    {
+      "fieldname": "session",
+      "label": "Session",
+      "fieldtype": "Link",
+      "options": "AI Engineer Session",
+      "reqd": 1
+    },
+    {
+      "fieldname": "action",
+      "label": "Action",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "target",
+      "label": "Target",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "input_json",
+      "label": "Input",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "output",
+      "label": "Output",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Planned\nExecuted\nFailed\nRejected",
+      "default": "Planned"
+    }
   ],
-  "permissions":[{"role":"System Manager","read":1,"write":1,"create":1,"delete":1}]
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
 }

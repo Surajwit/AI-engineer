@@ -7,7 +7,7 @@ app_license = "MIT"
 
 required_apps = ["frappe", "erpnext"]
 
-app_include_css = "ai_engineer/css/ai_engineer.css"
+app_include_css = "/assets/ai_engineer/css/ai_engineer.css"
 
 scheduler_events = {
     "hourly": [
